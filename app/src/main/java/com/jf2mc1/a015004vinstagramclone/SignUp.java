@@ -21,7 +21,8 @@ import java.util.List;
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edtName, edtPunchSpeed, edtPunchPower, edtKickSpeed, edtKickPower;
-    private Button btnSaveKickBoxer, btnClear, btnGetAllDataKb, btnSaveBoxer, btnGetAllDataBx;
+    private Button btnSaveKickBoxer, btnClear, btnGetAllDataKb, btnSaveBoxer, btnGetAllDataBx,
+    btnTransition;
     private TextView txtGetData;
     private String allKickBoxers, allBoxers;
 
@@ -42,10 +43,12 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         btnClear = findViewById(R.id.btn_clear);
         btnGetAllDataKb = findViewById(R.id.btn_get_all_data_kb);
         btnGetAllDataBx = findViewById(R.id.btn_get_all_data_bx);
+        btnTransition = findViewById(R.id.btn_transition);
 
         btnSaveKickBoxer.setOnClickListener(this::onClick);
         btnSaveBoxer.setOnClickListener(this::onClick);
         btnClear.setOnClickListener(this::onClick);
+        btnTransition.setOnClickListener(this::onClick);
 
         txtGetData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +71,14 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 getAllBoxers();
             }
         });
+
+
+    }
+
+    private void switchToNextActivity() {
+
+
+
 
 
     }
@@ -131,6 +142,14 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         ParseQuery<ParseObject> queryAll =
                 ParseQuery.getQuery("KickBoxer");
+
+        // filter the query
+        //queryAll.whereGreaterThan("punchPower", 10);
+        queryAll.whereGreaterThanOrEqualTo("punchPower", 280);
+        // only show one result
+        queryAll.setLimit(1);
+
+
         queryAll.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
@@ -249,10 +268,15 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             case R.id.btn_save_bx:
                 saveBoxer();
 
+            case R.id.btn_transition:
+                switchToNextActivity();
+
             default:
                 break;
 
         }
 
     }
+
+
 }
