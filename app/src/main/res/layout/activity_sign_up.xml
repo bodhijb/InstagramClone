@@ -11,84 +11,166 @@
         android:id="@+id/edt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:ems="14"
         android:hint="name"
         android:inputType="textPersonName"
-        android:ems="10"/>
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edt_punch_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_name"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ems="14"
         android:hint="punch speed"
         android:inputType="number"
-        android:ems="10"/>
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_name" />
 
     <EditText
         android:id="@+id/edt_punch_power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_punch_speed"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ems="14"
         android:hint="punch power"
         android:inputType="number"
-        android:ems="10"/>
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_punch_speed" />
 
     <EditText
         android:id="@+id/edt_kick_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_punch_power"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ems="14"
         android:hint="kick speed:"
         android:inputType="number"
-        android:ems="10"/>
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_punch_power" />
 
     <EditText
         android:id="@+id/edt_kick_power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_kick_speed"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ems="14"
         android:hint="kick speed:"
         android:inputType="number"
-        android:ems="10"/>
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_kick_speed" />
 
     <Button
-        android:id="@+id/btn_save"
+        android:id="@+id/btn_save_kb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/edt_kick_power"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="70dp"
-        android:text="Save!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_save_bx"
+        android:layout_marginTop="20dp"
+        android:text="Kickboxer"
+        android:textColor="@color/white"
         />
 
-
+    <Button
+        android:id="@+id/btn_save_bx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edt_kick_power"
+        app:layout_constraintStart_toEndOf="@id/btn_save_kb"
+        app:layout_constraintEnd_toStartOf="@id/btn_clear"
+        android:layout_marginTop="20dp"
+        android:text="Boxer"
+        android:textColor="@color/white"
+        />
 
     <Button
         android:id="@+id/btn_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btn_save"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_save_bx"
+        app:layout_constraintTop_toBottomOf="@id/edt_kick_power"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"
-        android:text="Clear fields"
+        android:layout_marginTop="20dp"
+        android:text="Clear"
+        android:textColor="@color/white"
         />
 
+        <TextView
+            android:id="@+id/txt_get_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="left"
+            android:padding="8dp"
+            android:background="@color/primaryDarkColor"
+            android:text="Get Data From Server"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            />
+
+    <Button
+        android:id="@+id/btn_get_all_data_kb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_get_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/secondaryDarkColor"
+        android:layout_margin="10dp"
+        android:text="get all kickboxers"
+        />
+
+    <Button
+        android:id="@+id/btn_get_all_data_bx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_get_all_data_kb"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/secondaryColor"
+        android:layout_margin="10dp"
+        android:text="get all Boxers"
+        />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
