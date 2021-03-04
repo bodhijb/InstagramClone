@@ -70,7 +70,7 @@
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:ems="14"
-        android:hint="kick speed:"
+        android:hint="kick power:"
         android:inputType="number"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toStartOf="@id/btn_save_bx"
         android:layout_marginTop="20dp"
         android:text="Kickboxer"
-        android:textColor="@color/white"
+        android:textColor="@color/secondaryLightColor"
         />
 
     <Button
@@ -98,7 +98,7 @@
         app:layout_constraintEnd_toStartOf="@id/btn_clear"
         android:layout_marginTop="20dp"
         android:text="Boxer"
-        android:textColor="@color/white"
+        android:textColor="@color/secondaryLightColor"
         />
 
     <Button
@@ -110,7 +110,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
         android:text="Clear"
-        android:textColor="@color/white"
+        android:textColor="@color/secondaryLightColor"
         />
 
         <TextView

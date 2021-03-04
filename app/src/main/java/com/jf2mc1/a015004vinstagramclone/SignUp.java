@@ -2,6 +2,7 @@ package com.jf2mc1.a015004vinstagramclone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -77,9 +78,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     private void switchToNextActivity() {
 
-
-
-
+        Intent intent = new Intent(SignUp.this,
+                SignUpLoginActivity.class);
+        startActivity(intent);
 
     }
 
